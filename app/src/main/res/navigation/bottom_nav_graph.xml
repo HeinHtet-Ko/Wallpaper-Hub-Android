@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_graph"
+    app:startDestination="@id/wallpaperFragment">
+
+    <fragment
+        android:id="@+id/wallpaperFragment"
+        android:name="com.mtu.ceit.hhk.wallpaperhub.ui.fragments.WallpaperFragment"
+        android:label="wallpaper_fragments"
+        tools:layout="@layout/wallpaper_fragment" />
+    <fragment
+        android:id="@+id/favFragment"
+        android:name="com.mtu.ceit.hhk.wallpaperhub.ui.fragments.FavouriteFragment"
+        android:label="FavouriteFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.mtu.ceit.hhk.wallpaperhub.ui.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>

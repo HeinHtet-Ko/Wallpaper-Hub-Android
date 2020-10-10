@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "684698213371",
+    "firebase_url": "https://simplified-wallpaper-app.firebaseio.com",
+    "project_id": "simplified-wallpaper-app",
+    "storage_bucket": "simplified-wallpaper-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684698213371:android:d1f7bfdccbca8e0dd3895e",
+        "android_client_info": {
+          "package_name": "com.mtu.ceit.hhk.wallpaperhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684698213371-sm9mt2u658gc1idt6cqmbkkbejlikm90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg6e-8sxCRBfyuWot_gw-6L4Q3IHEqjws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684698213371-sm9mt2u658gc1idt6cqmbkkbejlikm90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
