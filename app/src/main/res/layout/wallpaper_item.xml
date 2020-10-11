@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="260dp"
+    android:layout_height="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="3dp"
     android:layout_margin="5dp"
@@ -16,16 +16,15 @@
 
         <ImageView
             android:scaleType="centerCrop"
-            android:layout_margin="0dp"
             tools:src = "@drawable/ic_wallpaper"
-            android:id="@+id/category_item_photo"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"/>
+            android:id="@+id/wallpaper_item_photo"
+            android:layout_width="250dp"
+            android:layout_height="300dp"/>
         <TextView
 
             android:background="@drawable/text_vignetttes"
             android:layout_marginTop="0dp"
-            android:layout_alignBottom="@id/category_item_photo"
+            android:layout_alignBottom="@id/wallpaper_item_photo"
             android:layout_centerHorizontal="true"
             android:padding="8dp"
             tools:text="@string/app_name"
@@ -35,7 +34,7 @@
             android:textColor="#FFFFFF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/category_item_name"/>
+            android:id="@+id/wallpaper_item_name"/>
 
         <View
             android:id="@+id/divider"

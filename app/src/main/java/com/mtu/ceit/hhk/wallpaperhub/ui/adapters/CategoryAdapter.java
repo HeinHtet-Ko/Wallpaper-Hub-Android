@@ -1,6 +1,7 @@
-package com.mtu.ceit.hhk.wallpaperhub.ui;
+package com.mtu.ceit.hhk.wallpaperhub.ui.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.mtu.ceit.hhk.wallpaperhub.R;
+import com.mtu.ceit.hhk.wallpaperhub.ui.WallpaperActivity;
 import com.mtu.ceit.hhk.wallpaperhub.ui.models.Category;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -51,7 +51,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(mContext,category.name,Toast.LENGTH_LONG).show();
+                Intent i = new Intent(mContext, WallpaperActivity.class);
+                i.putExtra("category",category.name);
+                mContext.startActivity(i);
             }
         });
     }

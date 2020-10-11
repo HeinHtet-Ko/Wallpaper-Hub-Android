@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,13 +11,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mtu.ceit.hhk.wallpaperhub.R;
-import com.mtu.ceit.hhk.wallpaperhub.ui.CategoryAdapter;
+import com.mtu.ceit.hhk.wallpaperhub.ui.adapters.CategoryAdapter;
 import com.mtu.ceit.hhk.wallpaperhub.ui.models.Category;
 
 import java.util.ArrayList;
@@ -30,6 +30,7 @@ public class WallpaperFragment extends Fragment{
     private RecyclerView category_recycler ;
     private CategoryAdapter cate_adapter;
     private ArrayList<Category> cate_list = new ArrayList<>();
+    LottieAnimationView lv;
 
     @Nullable
     @Override
@@ -44,13 +45,19 @@ public class WallpaperFragment extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         myRef = FirebaseDatabase.getInstance().getReference("categories");
         category_recycler = view.findViewById(R.id.category_recycler);
+        lv = view.findViewById(R.id.ld_view);
 
-        GridLayoutManager gl = (GridLayoutManager) category_recycler.getLayoutManager();
-        gl.setSpanCount(2);
-
+        recyclerSet();
         readCategories();
 
 
+    }
+
+    private void recyclerSet()
+    {
+        cate_adapter = new CategoryAdapter(getContext(),cate_list);
+        category_recycler.setAdapter(cate_adapter);
+        category_recycler.setHasFixedSize(true);
     }
 
     private void readCategories()
@@ -71,8 +78,9 @@ public class WallpaperFragment extends Fragment{
 
 
                 }
-                cate_adapter = new CategoryAdapter(getContext(),cate_list);
-                category_recycler.setAdapter(cate_adapter);
+                lv.setVisibility(View.GONE);
+                cate_adapter.notifyDataSetChanged();
+
 
 
             }
