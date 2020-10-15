@@ -6,10 +6,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.fragments.SettingsFragment">
 
+
+
     <ToggleButton
-        android:textOff="Light Mode"
-        android:textOn="Dark Mode"
-        android:layout_centerHorizontal="true"
+
+        android:textOff="Dark Mode Off"
+        android:textOn="Dark Mode On"
+        android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
