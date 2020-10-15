@@ -2,11 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryLight"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.WallpaperActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/wp_actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            app:titleTextColor="@color/colorTitleBar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_height="match_parent"
+            app:title="@string/app_name">
 
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/wp_actionBar"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.github.clans.fab.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,7 +28,8 @@ public class WallpaperActivity extends AppCompatActivity {
     private DatabaseReference wpDbRef;
     private ArrayList<Wallpaper> wpList = new ArrayList<>();
     private WallpaperAdapter wpAdapter;
-    LottieAnimationView lv;
+    private LottieAnimationView lv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,7 @@ public class WallpaperActivity extends AppCompatActivity {
         String cate_name = i.getStringExtra("category");
         wpDbRef = FirebaseDatabase.getInstance().getReference("Images").child(cate_name);
         lv = findViewById(R.id.wp_ld_view);
+
 
         recyclerSetup();
         readDB();
@@ -71,7 +74,7 @@ public class WallpaperActivity extends AppCompatActivity {
     {
      wpRecycler = findViewById(R.id.wallpaper_recycler);
      GridLayoutManager gl = (GridLayoutManager) wpRecycler.getLayoutManager();
-     gl.setSpanCount(2);
+     gl.setSpanCount(3);
      wpAdapter = new WallpaperAdapter(WallpaperActivity.this,wpList);
      wpRecycler.setHasFixedSize(true);
      wpRecycler.setAdapter(wpAdapter);
